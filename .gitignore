@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / 前端
+node_modules/
+dist/
+
+# 运行时数据（保留目录本身）
+data/*
+!data/.gitkeep
+
+# 环境变量
+.env
+.env.*
+!.env.example
+
+# IDE / 系统
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# 内部文档（不上传）
+docs/
+
+# 日志
+*.log
+logs/

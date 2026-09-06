@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 设计令牌：浅色（默认）/ 深色，RGB 三元组便于透明度组合 */
+:root {
+  --c-bg: 244 245 247;
+  --c-surface: 255 255 255;
+  --c-surface-2: 246 247 249;
+  --c-border: 228 231 236;
+  --c-primary: 79 70 229;
+  --c-primary-fg: 255 255 255;
+  --c-text: 24 30 42;
+  --c-muted: 105 113 128;
+  --c-ok: 22 163 74;
+  --c-warn: 217 119 6;
+  --c-danger: 220 38 38;
+}
+
+.dark {
+  --c-bg: 14 16 20;
+  --c-surface: 23 26 32;
+  --c-surface-2: 31 35 43;
+  --c-border: 54 59 70;
+  --c-primary: 129 140 248;
+  --c-primary-fg: 14 16 20;
+  --c-text: 228 231 236;
+  --c-muted: 150 157 172;
+  --c-ok: 74 222 128;
+  --c-warn: 251 191 36;
+  --c-danger: 248 113 113;
+}
+
+body {
+  @apply bg-bg text-text antialiased;
+}
+
+/* 滑杆样式 */
+input[type='range'].range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: rgb(var(--c-border));
+  outline: none;
+}
+input[type='range'].range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgb(var(--c-primary));
+  border: 2px solid rgb(var(--c-surface));
+  cursor: pointer;
+}
+input[type='range'].range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgb(var(--c-primary));
+  border: 2px solid rgb(var(--c-surface));
+  cursor: pointer;
+}
+input[type='range'].range:disabled::-webkit-slider-thumb {
+  background: rgb(var(--c-muted));
+  cursor: not-allowed;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--c-border));
+  border-radius: 8px;
+}

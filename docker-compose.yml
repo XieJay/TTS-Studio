@@ -1,0 +1,13 @@
+services:
+  tts-studio:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      # 数据持久化：SQLite + 音频
+      - ./data:/app/data
+    restart: unless-stopped
+    # 如需访问宿主机上的本地模型（GPT-SoVITS / CosyVoice）：
+    # 容器内用 http://host.docker.internal:9880 这样的地址
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
